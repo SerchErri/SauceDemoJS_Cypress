@@ -1,5 +1,16 @@
 {
   "dependencies": {
-    "cypress": "^15.6.0"
+    "cypress": "^15.6.0",
+    "cypress-mochawesome-reporter": "^4.0.2"
+  },
+  "scripts": {
+    "cy:chrome": "cypress run --browser chrome",
+    "cy:chrome:headed": "cypress run --browser chrome --headless",
+    "cy:firefox": "cypress run --browser firefox",
+    "cy:firefox:headed": "cypress run --browser firefox --headed",
+    "cy:edge": "cypress run --browser edge",
+    "cy:edge:headed": "cypress run --browser edge --headed",
+    "test:all": "npm run cy:chrome && npm run cy:firefox && npm run cy:edge",
+    "test:all:headed": "npm run cy:chrome:headed && npm run cy:firefox:headed && npm run cy:edge:headed"
   }
 }
