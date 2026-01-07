@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    tools {
+        nodejs 'Node18'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/SerchErri/SauceDemoJS_Cypress.git'
+            }
+        }
+
+        stage('Install dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Run Cypress tests') {
+            steps {
+                sh 'npm run cy:run'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished'
+        }
+        success {
+            echo 'Tests OK ✅'
+        }
+        failure {
+            echo 'Tests failed ❌'
+        }
+    }
+}
