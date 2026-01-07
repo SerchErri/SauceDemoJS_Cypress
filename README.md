@@ -77,8 +77,3 @@ npx cypress run --spec "cypress/e2e/login/login.cy.js" --browser chrome
 **Licencia**
 - Este proyecto no incluye una licencia explícita. Añada una licencia como `MIT` si desea permitir el uso público.
 
----
-
-Si quieres, puedo:
-- Ejecutar los tests localmente y subir un ejemplo de reporte.
-- Añadir badges al README (build/test coverage).
